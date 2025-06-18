@@ -1,0 +1,114 @@
+### Create a new operation
+POST http://localhost:5000/api/operations
+Content-Type: application/json
+
+{
+    "operationNumberInput": "OP-XYZ-003",
+    "name": "Test İthalat",
+    "type": "ithalat"
+}
+
+### Create an operation with an existing operationNumber
+POST http://localhost:5000/api/operations
+Content-Type: application/json
+
+{
+    "operationNumberInput": "OP-XYZ-002",
+    "name": "Tekrar Deneme",
+    "type": "ithalat"
+}
+
+### Create an operation with missing fields
+POST http://localhost:5000/api/operations
+Content-Type: application/json
+
+{
+    "name": "Eksik Alanlı Operasyon"
+}
+
+
+### Get all operations
+GET http://localhost:5000/api/operations
+
+### Get a specific operation by ID
+GET http://localhost:5000/api/operations/5406bca5-f62e-4ff6-8272-3b2a486eec1a
+
+
+### Get an operations hierarchical data
+GET http://localhost:5000/api/operations/37aabb72-24b1-484e-91ac-66bb24339f83
+
+
+### Create a new global company
+POST http://localhost:5000/api/global-companies
+Content-Type: application/json
+
+{
+    "name": "Ana Tedarikçi A.Ş. 5",
+    "address": "Merkez Cad. No:5",
+    "taxNumber": "5678901234",
+    "contact": "info@anatedarikci5.com"
+}
+
+### get all global companies
+GET http://localhost:5000/api/global-companies
+Content-Type: application/json
+
+### Get a specific global company by ID
+GET http://localhost:5000/api/global-companies/082d04f8-8653-4d66-a687-eee1c8497cf7
+Content-Type: application/json
+
+### Update a global company
+PUT http://localhost:5000/api/global-companies/082d04f8-8653-4d66-a687-eee1c8497cf7
+Content-Type: application/json
+
+{
+    "taxNumber": "345678901211111",
+    "contact": "guncelinfo@anatedarikci3.com"
+}
+
+### Delete a global company
+DELETE http://localhost:5000/api/global-companies/47c4300f-16ba-49b6-b89d-8d8b1c8a4c2c
+Content-Type: application/json
+
+### Add a participant to an operation
+POST http://localhost:5000/api/operations/37aabb72-24b1-484e-91ac-66bb24339f83/participants
+Content-Type: application/json
+
+{
+    "globalCompanyId": "d94e55df-556b-442d-9412-d1dde1ae5a52",
+    "role": "tedarikci"
+}
+
+### Get all participants of an operation
+GET http://localhost:5000/api/operations/37aabb72-24b1-484e-91ac-66bb24339f83/participants
+Content-Type: application/json
+
+### Delete a participant from an operation
+DELETE http://localhost:5000/api/operations/37aabb72-24b1-484e-91ac-66bb24339f83/participants/2ff01257-785b-4c38-beed-ff5b0f8088f4
+
+### Get all documents of a participant
+GET http://localhost:5000/api/participants/ed91a9db-9e4c-4733-8e78-3d8f4e610948/documents
+
+### Delete a document of a participant
+DELETE http://localhost:5000/api/files/documents/d1b22105-95bc-4793-aaef-7b28b975c792
+### Delete an operation
+DELETE http://localhost:5000/api/operations/6f0d4836-face-44d7-9034-864ca375d2d8
+
+### Update an operation
+PUT http://localhost:5000/api/operations/37aabb72-24b1-484e-91ac-66bb24339f83
+Content-Type: application/json
+
+{
+    "name": "Deneme Adı",
+    "operationNumber": "DEGISMEZ-BU"
+}
+
+### Register a new user
+POST api/auth/register
+Content-Type: application/json
+
+{
+    "username": "L-000001",
+    "password": "password123",
+    "name": "Test Kullanıcısı Bir"
+}

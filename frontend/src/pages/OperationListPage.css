@@ -1,0 +1,145 @@
+/* src/pages/OperationListPage.css */
+.operation-list-page .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.operation-list-page .page-header h1 {
+    margin: 0;
+}
+
+.operations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.operations-table th,
+.operations-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.operations-table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+}
+
+.operations-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.operations-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #5cb85c; /* Yeşil tonu */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.button-link:hover {
+    background-color: #4cae4c;
+}
+
+.loading-message, .error-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+}
+.error-message {
+    color: red;
+}
+
+/*.primary-button {*/ /* App.css'teki genel button stilini kullanır ama gerekirse override edilebilir */
+    /* background-color: #007bff;
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+}*/
+
+.filters-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.search-input,
+.filter-select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-input {
+    flex-grow: 1; /* Arama kutusunun daha fazla yer kaplaması için */
+}
+
+.filter-select {
+    min-width: 150px;
+}
+
+.loading-inline {
+    text-align: center;
+    padding: 10px;
+    color: #555;
+    font-style: italic;
+}
+
+.operations-table.sortable th {
+    cursor: pointer;
+    user-select: none; /* Metin seçilmesini engelle */
+}
+.operations-table.sortable th:hover {
+    background-color: #e9ecef;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.pagination-controls button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    /*background-color: #fff;*/
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pagination-controls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.pagination-controls button.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.pagination-controls .page-info {
+    margin-left: 1rem;
+    font-size: 0.9em;
+    color: #555;
+}

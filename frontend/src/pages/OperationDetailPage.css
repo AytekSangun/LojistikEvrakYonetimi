@@ -1,0 +1,165 @@
+/* src/pages/OperationDetailPage.css */
+.operation-detail-page .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.operation-detail-page .page-header h1 {
+    margin: 0;
+}
+.operation-detail-page hr {
+    margin: 1.5rem 0;
+}
+
+.participant-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.participant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.75rem;
+}
+.participant-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+}
+.participant-header .role-badge {
+    background-color: #3498db;
+    color: white;
+    padding: 0.3em 0.7em;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-left: 0.5em;
+    text-transform: capitalize;
+}
+.participant-header button.button-small { /* App.css'teki button'u override eder */
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85em;
+    margin-left: 0.5rem;
+}
+.button-small.success { background-color: #2ecc71; }
+.button-small.success:hover { background-color: #27ae60; }
+.button-small.danger { background-color: #e74c3c; }
+.button-small.danger:hover { background-color: #c0392b; }
+
+
+.document-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.document-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.document-list li:last-child {
+    border-bottom: none;
+}
+.document-list a {
+    color: #2980b9;
+    text-decoration: none;
+}
+.document-list a:hover {
+    text-decoration: underline;
+}
+.document-list .file-info {
+    font-size: 0.85em;
+    color: #7f8c8d;
+    margin-left: 0.5em;
+}
+.document-list .button-tiny {
+    padding: 2px 6px;
+    font-size: 0.9em;
+    line-height: 1;
+    margin-left: 10px;
+}
+
+
+/* Modal Stilleri */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.modal-close-button {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    color: #888;
+}
+.modal-close-button:hover {
+    color: #333;
+}
+.modal-body .error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.participant-header.clickable {
+    cursor: pointer;
+    /* İsteğe bağlı: Hover efekti */
+    /* transition: background-color 0.2s ease-in-out; */
+}
+.participant-header.clickable:hover {
+     background-color: #f9f9f9;  /* Çok hafif bir hover efekti */
+}
+
+.participant-header h3 .expand-indicator {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 0.8em;
+    color: #555;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* .participant-header.clickable:hover h3 .expand-indicator {
+    color: #333;
+} */
+
+/* .documents-section {
+    margin-top: 1rem;
+    padding-left: 1rem; /* Hafif bir girinti
+    border-left: 2px solid #eee; /* Sol kenarlık
+} */

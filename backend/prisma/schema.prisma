@@ -1,0 +1,78 @@
+// backend/prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Operation {
+  id              String    @id @default(uuid())
+  operationNumber String    @unique
+  name            String
+  type            String    // "ithalat" veya "ihracat"
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  participants    OperationParticipant[] // Bir operasyondaki katılımcı firmalar
+}
+
+// Merkezi Firma Kayıtları
+model GlobalCompany {
+  id        String   @id @default(uuid())
+  name      String   @unique // Firma adı benzersiz olmalı
+  // İsteğe bağlı: Adres, vergi no, iletişim bilgileri gibi diğer genel firma detayları
+  address   String
+  taxNumber String
+  contact   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  operations OperationParticipant[] // Bu firmanın katıldığı operasyonlar
+}
+
+// Operasyon ve GlobalCompany arasındaki bağlantı tablosu (rolü de tutar)
+model OperationParticipant {
+  id              String      @id @default(uuid())
+  role            String      // "tedarikci", "alici", "musteri"
+  operationId     String
+  globalCompanyId String
+  operation       Operation   @relation(fields: [operationId], references: [id], onDelete: Cascade) // Operasyon silinirse bu bağlantı da silinsin
+  globalCompany   GlobalCompany @relation(fields: [globalCompanyId], references: [id], onDelete: Restrict) // Global firma silinmeden önce bağlantıları kaldırılmalı
+  // onDelete: Restrict -> Eğer bu globalCompany bir operasyona bağlıysa silinmesini engeller.
+  // Ya da onDelete: Cascade -> Global firma silinince bu bağlantı da silinir (dikkatli kullanılmalı)
+  // Şimdilik Restrict daha güvenli.
+
+  createdAt DateTime @default(now())
+  documents Document[] // Bu katılımcıya (yani operasyondaki o rolüne) ait dokümanlar
+
+  @@unique([operationId, globalCompanyId, role]) // Bir firma bir operasyonda aynı rolle birden fazla kez yer alamaz
+  @@index([operationId])
+  @@index([globalCompanyId])
+}
+
+model Document {
+  id                 String   @id @default(uuid())
+  originalFileName   String
+  storedFileName     String
+  filePath           String   @unique
+  fileType           String
+  fileSize           Int
+  uploadedAt         DateTime @default(now())
+  participant        OperationParticipant @relation(fields: [participantId], references: [id], onDelete: Cascade) // Katılımcı silinince doküman da silinsin
+  participantId      String
+
+  @@index([participantId])
+}
+
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique // "L-000001" formatında
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  loginAttempts Int @default(0) // Brute force için deneme sayısı
+  lockedUntil DateTime?      // Brute force için kilitlenme bitiş zamanı
+}
