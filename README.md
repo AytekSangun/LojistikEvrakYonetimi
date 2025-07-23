@@ -1,6 +1,36 @@
-# 📦 Lojistik Evrak Yönetimi (LogiDocs)
+# 📦 Logistics Document Management System (LogiDocs)
 
-**LogiDocs**, küçük ve orta ölçekli lojistik firmalarının operasyonel belgelerini merkezi bir şekilde yönetebilmesi için geliştirilmiş web tabanlı bir belge yönetim sistemidir. Bu sistem, e-posta yoluyla alınan belgelerin dağınıklığını ortadan kaldırır, belge erişimini hızlandırır ve iş süreçlerini daha verimli hale getirir.
+**LogiDocs** is a web-based document management system designed for small and medium-sized logistics companies to centrally manage their operational documents. The system eliminates the clutter of documents received via email, accelerates document access, and improves workflow efficiency.
+
+## 🚀 Features
+
+- 📁 **Operation Management:** Create, list, update, and delete import/export operations.
+- 🌍 **Global Company Management:** Centrally manage global companies like suppliers, buyers, and clients.
+- 🗂️ **Document Management:** Upload and organize documents under operation participants in a structured hierarchy.
+- 🔒 **Security:**
+  - JWT-based user authentication
+  - Password hashing with bcrypt
+  - Brute-force attack prevention
+  - Input validation and SQL injection prevention (via Prisma ORM)
+- 🔍 **List Views:** Search, sorting, and pagination for user-friendly navigation.
+- ✅ **Modern UI:** A clean and responsive single-page application built with React.js.
+
+## 🛠️ Technologies
+
+- **Backend:** Node.js, Express.js, Prisma ORM
+- **Frontend:** React.js (Vite, React Router DOM, React Hook Form, Axios, React Toastify)
+- **Database:** PostgreSQL
+- **Others:** JWT, Bcrypt.js, Multer
+
+## 📖 More Information
+
+For further details, please see the [graduation thesis report](https://github.com/AytekSangun/LojistikEvrakYonetimi/blob/main/Graduation%20Thesis.pdf).
+
+---
+
+# 📦 Lojistik Evrak Yönetim Sistemi (LogiDocs)
+
+**LogiDocs**, küçük ve orta ölçekli lojistik firmalarının operasyonel belgelerini merkezi bir şekilde yönetebilmesi için geliştirilmiş web tabanlı bir belge yönetim sistemidir. Sistem, e-posta yoluyla alınan belgelerin dağınıklığını ortadan kaldırır, belge erişimini hızlandırır ve iş süreçlerini daha verimli hale getirir.
 
 ## 🚀 Özellikler
 
@@ -13,9 +43,9 @@
   - Brute-force saldırı koruması
   - Girdi doğrulama ve SQL injection önleme (Prisma ORM)
 - 🔍 **Listeleme Özellikleri:** Arama, sıralama ve sayfalama ile kullanıcı dostu listeler.
-- ✅ **Basit ve Kullanıcı Dostu Arayüz:** React.js ile geliştirilmiş modern SPA.
+- ✅ **Modern Arayüz:** React.js ile geliştirilmiş temiz ve duyarlı bir tek sayfa uygulaması.
 
-## 🛠️ Teknolojiler
+## 🛠️ Kullanılan Teknolojiler
 
 - **Backend:** Node.js, Express.js, Prisma ORM
 - **Frontend:** React.js (Vite, React Router DOM, React Hook Form, Axios, React Toastify)
