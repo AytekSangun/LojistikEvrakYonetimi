@@ -28,6 +28,10 @@ For further details, please see the [graduation thesis report](https://github.co
 
 ---
 
+---
+
+---
+
 # 📦 Lojistik Evrak Yönetim Sistemi (LogiDocs)
 
 **LogiDocs**, küçük ve orta ölçekli lojistik firmalarının operasyonel belgelerini merkezi bir şekilde yönetebilmesi için geliştirilmiş web tabanlı bir belge yönetim sistemidir. Sistem, e-posta yoluyla alınan belgelerin dağınıklığını ortadan kaldırır, belge erişimini hızlandırır ve iş süreçlerini daha verimli hale getirir.
