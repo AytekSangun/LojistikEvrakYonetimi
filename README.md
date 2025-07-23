@@ -24,4 +24,4 @@
 
 ## 📖 Detaylı Bilgi
 
-Daha fazla detay için [bitirme tezi raporunu]() inceleyebilirsiniz.
+Daha fazla detay için [bitirme tezi raporunu](https://github.com/AytekSangun/LojistikEvrakYonetimi/blob/main/Graduation%20Thesis.pdf) inceleyebilirsiniz.
