@@ -25,11 +25,10 @@
 ## 📖 More Information
 
 For further details, please see the [graduation thesis report](https://github.com/AytekSangun/LojistikEvrakYonetimi/blob/main/Graduation%20Thesis.pdf).
+Turkish is below.
 
 ---
----
-- **Turkish is Below**
----
+
 ---
 
 # 📦 Lojistik Evrak Yönetim Sistemi (LogiDocs)
