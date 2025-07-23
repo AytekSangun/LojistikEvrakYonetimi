@@ -28,7 +28,7 @@ For further details, please see the [graduation thesis report](https://github.co
 
 ---
 ---
----
+**Turkish is Below**
 ---
 ---
 
